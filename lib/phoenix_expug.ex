@@ -1,0 +1,2 @@
+defmodule PhoenixExpug do
+end
