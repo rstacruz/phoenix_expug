@@ -12,17 +12,20 @@ defmodule PhoenixExpug.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    [applications: [:phoenix]]
   end
 
   defp deps do
     [
+      {:phoenix, "~> 1.1"},
+      {:phoenix_html, "~> 2.3"},
       {:expug, git: "git://github.com/rstacruz/expug.git"}
     ]
   end
 
   def package do
     [
+      description: "Phoenix template engine for Expug",
       maintainers: ["Rico Sta. Cruz"],
       licenses: ["MIT"],
       files: ["lib", "mix.exs", "README.md"],
