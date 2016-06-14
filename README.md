@@ -18,6 +18,27 @@ def deps do
 end
 ```
 
+Add the following to your `config/config.exs`:
+
+```elixir
+config :phoenix, :template_engines,
+  pug: PhoenixExpug.Engine
+```
+
+Add the .pug extension to Phoenix livereload in `config/dev.exs`:
+
+```elixir
+config :hello_phoenix, HelloPhoenix.Endpoint,
+  live_reload: [
+    patterns: [
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{web/views/.*(ex)$},
+      ~r{web/templates/.*(eex|pug)$}
+      #                      ^^^^
+    ]
+  ]
+```
+
 ## Thanks
 
 **phoenix_expug** © 2016+, Rico Sta. Cruz. Released under the [MIT] License.<br>
