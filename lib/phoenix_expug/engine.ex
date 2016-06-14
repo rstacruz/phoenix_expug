@@ -11,11 +11,14 @@ defmodule PhoenixExpug.Engine do
   end
 
   defp read!(file_path) do
-    case file_path |> File.read! |> Expug.to_eex do
-      {:ok, eex} ->
-        eex
-      err ->
-        raise err # TODO
+    try do
+      file_path |> File.read! |> Expug.to_eex!
+    rescue
+      error in [Expug.Error] ->
+        reraise %Expug.Error{error |
+          message: "#{file_path}: " <> error.message}, System.stacktrace
+      error ->
+        reraise error, System.stacktrace
     end
   end
 end

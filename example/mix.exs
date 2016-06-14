@@ -4,6 +4,9 @@ defmodule Example.Mixfile do
   def project do
     [app: :example,
      version: "0.0.1",
+     build_path: "../_build",
+     deps_path: "../deps",
+     lockfile: "../mix.lock",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
