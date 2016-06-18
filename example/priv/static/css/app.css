@@ -1,1 +1,12 @@
+.try-expug {
+  width: 100%;
+}
 
+.try-expug > .input-box {
+  width: 48%;
+  box-sizing: border-box;
+}
+
+.input-box {
+  height: 400px;
+}

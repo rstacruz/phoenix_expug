@@ -17,10 +17,12 @@ defmodule Example.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/try", TryController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Example do
-  #   pipe_through :api
-  # end
+  scope "/", Example do
+    pipe_through :api
+    post "/try/compile", TryController, :compile
+  end
 end

@@ -4,20 +4,28 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
     meta(name="description" content=" ")
+    meta(name="csrf-token" content=get_csrf_token())
     title Hello Example!
     link(rel="stylesheet" href=static_path(@conn, "/css/app.css"))
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
   body
-    main(role="main")
-      = render @view_module, @view_template, assigns
-    .container
-      header.header
-        nav(role: "navigation")
-          ul
-            li
-              a(href="#")
-                | Get started
-      p.alert.alert-info(role="alert")= get_flash(@conn, :info)
-      p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
+      nav.navbar.navbar-default(role: "navigation")
+        .container
+          a.navbar-brand(href=static_path(@conn, "/css/app.css")) Hello
+          .navbar-collapse
+            ul.nav.navbar-nav
+              li
+                a(href=try_path(@conn, :index))
+                  | Try Expug
+      .container
+        main(role="main")
+          = render @view_module, @view_template, assigns
+
+      -# p.alert.alert-info(role="alert")= get_flash(@conn, :info)
+      -# p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
+
+    script(src="https://code.jquery.com/jquery-3.0.0.min.js")
+    script(src=static_path(@conn, "/js/app.js"))
 
 -#
 -# <html lang="en">
