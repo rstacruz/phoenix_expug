@@ -17,9 +17,9 @@ defmodule PhoenixExpug.Mixfile do
 
   defp deps do
     [
-      {:phoenix, "~> 1.1"},
-      {:phoenix_html, "~> 2.3"},
-      {:expug, git: "git://github.com/rstacruz/expug.git"}
+      {:phoenix, ">= 1.1"},
+      {:phoenix_html, ">= 2.3"},
+      {:expug, ">= 0.0.1"}
     ]
   end
 
