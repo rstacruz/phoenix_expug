@@ -17,7 +17,7 @@ defmodule PhoenixExpug.Mixfile do
 
   defp deps do
     [
-      {:phoenix, ">= 1.1"},
+      {:phoenix, ">= 1.1.0"},
       {:phoenix_html, ">= 2.3.0"},
       {:expug, ">= 0.0.1"}
     ]
