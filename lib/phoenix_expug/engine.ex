@@ -1,6 +1,11 @@
 defmodule PhoenixExpug.Engine do
   @behaviour Phoenix.Template.Engine
 
+  @expug_options [
+    raw_helper: "raw",
+    escape_helper: ""
+  ]
+
   @doc """
   Precompiles the String file_path into a function defintion, using Calliope engine
   """
@@ -12,7 +17,7 @@ defmodule PhoenixExpug.Engine do
 
   defp read!(file_path) do
     try do
-      file_path |> File.read! |> Expug.to_eex!
+      file_path |> File.read! |> Expug.to_eex!(@expug_options)
     rescue
       error in [Expug.Error] ->
         reraise %Expug.Error{error |
