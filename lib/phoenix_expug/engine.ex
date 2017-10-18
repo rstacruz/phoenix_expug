@@ -1,4 +1,8 @@
 defmodule PhoenixExpug.Engine do
+  @moduledoc ~S"""
+  Phoenix template engine for Expug.
+  """
+
   @behaviour Phoenix.Template.Engine
 
   @expug_options [

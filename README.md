@@ -42,7 +42,7 @@ config :hello_phoenix, HelloPhoenix.Endpoint,
 
 ## Thanks
 
-**phoenix-expug** © 2016+, Rico Sta. Cruz. Released under the [MIT] License.<br>
+**phoenix-expug** © 2016-2017, Rico Sta. Cruz. Released under the [MIT] License.<br>
 Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
 
 > [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
