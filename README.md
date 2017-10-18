@@ -7,6 +7,8 @@
 [Expug]: https://github.com/rstacruz/expug
 [Phoenix]: http://phoenixframework.org/
 
+[![Status](https://travis-ci.org/rstacruz/phoenix_expug.svg?branch=master)](https://travis-ci.org/rstacruz/phoenix_expug "See test builds")
+
 ## Installation
 
 Add phoenix_expug to your list of dependencies in `mix.exs`:
@@ -41,7 +43,7 @@ config :hello_phoenix, HelloPhoenix.Endpoint,
 
 ## Thanks
 
-**phoenix_expug** © 2016+, Rico Sta. Cruz. Released under the [MIT] License.<br>
+**phoenix-expug** © 2016+, Rico Sta. Cruz. Released under the [MIT] License.<br>
 Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
 
 > [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
@@ -50,3 +52,6 @@ Authored and maintained by Rico Sta. Cruz with help from contributors ([list][co
 
 [MIT]: http://mit-license.org/
 [contributors]: http://github.com/rstacruz/phoenix_expug/contributors
+
+[![](https://img.shields.io/github/followers/rstacruz.svg?style=social&label=@rstacruz)](https://github.com/rstacruz) &nbsp;
+[![](https://img.shields.io/twitter/follow/rstacruz.svg?style=social&label=@rstacruz)](https://twitter.com/rstacruz)
