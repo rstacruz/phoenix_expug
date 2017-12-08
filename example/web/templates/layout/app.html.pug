@@ -3,62 +3,26 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
-    meta(name="description" content=" ")
     meta(name="csrf-token" content=get_csrf_token())
     title Hello Example!
     link(rel="stylesheet" href=static_path(@conn, "/css/app.css"))
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
   body
-      nav.navbar.navbar-default(role="navigation")
-        .container
-          a.navbar-brand(href=static_path(@conn, "/css/app.css")) Hello
-          .navbar-collapse
-            ul.nav.navbar-nav
-              li
-                a(href=try_path(@conn, :index))
-                  | Try Expug
+    nav.navbar.navbar-default(role="navigation")
       .container
-        main(role="main")
-          = render @view_module, @view_template, assigns
+        a.navbar-brand(href=static_path(@conn, "/css/app.css")) Hello
+        .navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href=try_path(@conn, :index))
+                | Try Expug
+    .container
+      main(role="main")
+        = render @view_module, @view_template, assigns
 
-      -# p.alert.alert-info(role="alert")= get_flash(@conn, :info)
-      -# p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
+    //- We don't need flash messages for try_expug
+    //- p.alert.alert-info(role="alert")= get_flash(@conn, :info)
+    //- p.alert.alert-danger(role="alert")= get_flash(@conn, :error)
 
-    script(src="https://code.jquery.com/jquery-3.0.0.min.js")
-    script(src=static_path(@conn, "/js/app.js"))
-
--#
--# <html lang="en">
--#   <head>
--#     <meta charset="utf-8">
--#     <meta http-equiv="X-UA-Compatible" content="IE=edge">
--#     <meta name="viewport" content="width=device-width, initial-scale=1">
--#     <meta name="description" content="">
--#     <meta name="author" content="">
--# 
--#     <title>Hello Example!</title>
--#     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
--#   </head>
--# 
--#   <body>
--#     <div class="container">
--#       <header class="header">
--#         <nav role="navigation">
--#           <ul class="nav nav-pills pull-right">
--#             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
--#           </ul>
--#         </nav>
--#         <span class="logo"></span>
--#       </header>
--# 
--#       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
--#       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
--# 
--#       <main role="main">
--#         <%= render @view_module, @view_template, assigns %>
--#       </main>
--# 
--#     </div> <!-- /container -->
--#     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
--#   </body>
--# </html>
+  script(src="https://code.jquery.com/jquery-3.0.0.min.js")
+  script(src=static_path(@conn, "/js/app.js"))
